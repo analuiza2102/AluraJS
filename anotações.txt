@@ -1,0 +1,78 @@
+ - Podemos notar que essa tag audio já vem com controles nativos, como o botão de play, uma barra de progresso, a duração do som e um slider de volume.
+ - Queremos ter uma consistência de design na nossa aplicação para as pessoas usuárias, e esse tipo de tag é muito difícil de customizar, não sendo possível customizar com CSS diretamente.
+ - Portanto, precisamos passar o controle da reprodução do som, que está na tag audio, para os nossos botões. 
+- TAG Audio <!--Responsável por carregar e receber som -->  
+- Controls <!--controls para exibir os controles de reprodução do áudio.-->
+
+    <audio controls src="sounds/keyq.wav" id="som_tecla_pom"></audio>  
+    <audio controls src="sounds/keyw.wav" id="som_tecla_clap"></audio> 
+    <audio controls src="sounds/keye.wav" id="som_tecla_tim"></audio>
+    <audio controls src="sounds/keya.wav" id="som_tecla_puff"></audio>
+    <audio controls src="sounds/keys.wav" id="som_tecla_splash"></audio>
+    <audio controls src="sounds/keyd.wav" id="som_tecla_toim"></audio>
+    <audio controls src="sounds/keyz.wav" id="som_tecla_psh"></audio>
+    <audio controls src="sounds/keyx.wav" id="som_tecla_tic"></audio>
+    <audio controls src="sounds/keyc.wav" id="som_tecla_tom"></audio> 
+
+ ---- Atributo onclick ---
+- > O primeiro botão do nosso Alura Midi é a tecla Pom (tecla_pom). Para fazermos algo com JavaScript nesse botão, podemos utilizar um atributo HTML na tag button chamado onclick.
+- > O atributo onclick, como muitos atributos HTML, também vem acompanhado do sinal de igual e aspas duplas, e dentro das aspas duplas podemos escrever qualquer código JavaScript — onclick="".
+- > Alert - alerta / janelinha de aviso
+- > onclick="alert('Pom')" 
+
+
+------- JS ------------
+- Mains Js - arquivo principal
+- Para conectar ao HTML = <script src=""></script>
+- Como inserir o botão do html dentro do JS:
+    - querySelector - função que é capaz de buscar e nos trazer um elemento
+        querySelector('') - deve vir com o parêntese depois e entre parênteses, aspas simples, porque vamos passar um texto para ela; Nesse caso, vamos passar o nome do seletor.
+    - Como o seletor é um nome, precisamos decidir se será uma classe, o nome da tag ou ID - assim como no CSS. Se for o nome da tag, é direto o nome da tag button.
+        - Exemplo:
+            Se for uma classe e ponto ".tecla_pom"
+                querySelector('.tecla_pom')
+            Se for um ID, vamos começar com hashtag, #som_tecla_pom
+    - O querySelector ele precisa ter escopo, preciso informar ao JS onde eu quero que seja buscado esse elemento com este seletor.
+    - document - representa todo documento HTML - tag document
+    - document.querySelector - irá acessar os atributos do querySelector
+        -document.querySelector('.tecla') seleciona todas as teclas/retorna
+    - JavaScript é sensivel a letra maiuscula e minuscula 
+    - https://www.alura.com.br/artigos/html-css-e-js-definicoes
+
+
+    Exercicios:
+    1) Selecionando elementos com JavaScript
+Você já sabe como usar o DevTools para inspecionar elementos HTML. Agora, está trabalhando em um projeto de site musical e precisa interagir com os botões que representam as teclas de um piano. Logo, seu desafio é: utilize o Javascript para selecionar um botão específico na sua página.
+
+    2) Emitindo um alerta na tela
+Imagine que você está trabalhando em um projeto de site que inclui elementos interativos como botões que emitem sons, semelhante a um piano. Até o momento, você já aprendeu como emitir o som utilizando JavaScript, agora, a sua missão é emitir um alerta escrito “Fui clicado”, em um botão assim que ele receber um clique.
+
+    3) Integrando estilo e funcionalidade em um projeto Web
+Neste exercício, você enfrentará um desafio comum no desenvolvimento web: garantir consistência de design entre diferentes navegadores. Trabalhando com o mesmo projeto do instrumento musical digital, você percebeu que o mini player de áudio tem aparências diferentes no Firefox e no Chrome. Seu objetivo é personalizar o estilo desse player de áudio usando CSS para que ele tenha uma aparência consistente em ambos os navegadores. Como a tag audio é difícil de estilizar diretamente, você precisará encontrar uma maneira criativa de contornar essa limitação, talvez usando elementos HTML adicionais e CSS para alcançar o design desejado.
+
+
+Selecionando mais de uma palavra ao mesmo tempo no VS 
+Para selecionar parte do código e fazer uma alteração em massa, você pode usar a funcionalidade de "seleção múltipla" do VS Code.
+
+Existem algumas maneiras de fazer isso, mas uma das mais comuns é usar o Alt + Clique (ou Option + Clique em Mac).
+
+Veja como funciona:
+
+Posicione o cursor no primeiro local que você quer editar.
+Pressione e segure a tecla Alt (ou Option).
+Clique com o mouse no próximo local que você quer editar.
+Solte a tecla Alt (ou Option).
+Agora você terá dois cursores piscando, um em cada local que você selecionou.
+
+Para editar em massa:
+
+Digite o texto que você quer adicionar ou modificar.
+Pressione Enter para confirmar a alteração em todos os locais selecionados.
+Dica: Você pode usar o Alt + Clique várias vezes para selecionar mais locais e fazer alterações em massa em vários pontos do seu código.
+
+----------- Play no JS --------------
+querySelector - selecionar elementos HTML no JS
+querySelector precisa ser usado dentro do document, o qual representa todo o doc HTML 
+EX:
+    
+    document.querySelector('.tecla'); 
